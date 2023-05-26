@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.Arrays;
-
 public class App
 {
     public static void main( String[] args )
@@ -51,7 +49,14 @@ public class App
         bank.transfer("12312312312", "98745612364", 200);
         bank.transfer("45612378961", "12312312312", 100);
 
-
+        System.out.println("Clients in the bank:");
+        for (int i = 0; i < bank.getClientCount(); i++) {
+            Client client = bank.getClientByIndex(i);
+            System.out.println("Account Number: " + client.getAccountNumber());
+            System.out.println("Client Name: " + client.getName());
+            System.out.println("Account Balance: " + client.getBalance());
+            System.out.println();
+        }
 
     }
 }

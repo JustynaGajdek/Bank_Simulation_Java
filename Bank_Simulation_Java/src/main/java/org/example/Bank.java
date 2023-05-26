@@ -56,6 +56,13 @@ public class Bank {
         return null;
     }
 
+    public Client getClientByIndex(int clientIndex) {
+        if (clientIndex >= 0 && clientIndex < clients.length) {
+            return clients[clientIndex];
+        }
+        return null;
+    }
+
     public void deposit(String accountNumber, double amount) {
         Client client = getClientByAccountNumber(accountNumber);
         if (client != null) {
